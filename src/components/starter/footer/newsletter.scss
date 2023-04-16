@@ -1,0 +1,62 @@
+@import "/@/assets/scss/variables";
+@import "/@/assets/scss/mixins";
+
+$newsletter-margin: 180px auto 80px;
+$newsletter-title-font-size: 2rem;
+$newsletter-text-font-size: 1.2rem;
+$newsletter-group-margin: 0 auto;
+$newsletter-group-width: 300px;
+$newsletter-input-height: 50px;
+$newsletter-input-font-size: 14px;
+$newsletter-button-padding: 10px 20px;
+$newsletter-button-height: 50px;
+
+.newsletter {
+  margin: $newsletter-margin;
+  text-align: center;
+
+  @include mobile {
+    margin-top: 0;
+  }
+}
+
+.newsletter__title {
+  font-family: $font-secondary;
+  font-size: $newsletter-title-font-size;
+}
+
+.newsletter__text {
+  font-family: $font-secondary;
+  font-size: $newsletter-text-font-size;
+}
+
+.newsletter__group {
+  margin: $newsletter-group-margin;
+  width: $newsletter-group-width;
+}
+
+.newsletter__input {
+  border: none;
+  color: $brand-gray;
+  display: inline-block;
+  height: $newsletter-input-height;
+  font-size: $newsletter-input-font-size;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.newsletter__button {
+  background: $brand-black;
+  color: $brand-white;
+  border: none;
+  padding: $newsletter-button-padding;
+  text-transform: uppercase;
+  height: $newsletter-button-height;
+  width: 100%;
+}

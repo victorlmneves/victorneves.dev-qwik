@@ -1,0 +1,119 @@
+@import "/@/assets/scss/variables";
+@import "/@/assets/scss/mixins";
+
+$item-min-height: 100vh;
+$item-bottom-margin: 120px;
+$last-item-bottom-margin: 60px;
+$content-padding: 60px 30px;
+$content-padding-mobile: 30px 30px 60px;
+$title-font-size: 2.6rem;
+$title-margin: 0;
+$info-font-size: 1.3rem;
+$link-padding: 5px 15px;
+
+.item {
+  display: flex;
+  margin-bottom: $item-bottom-margin;
+
+  @include mobile {
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
+
+  @include from-tablet {
+    min-height: $item-min-height;
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+
+      .item__content-wrapper {
+        left: -50px;
+        text-align: left;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: $last-item-bottom-margin;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: $last-item-bottom-margin;
+  }
+}
+
+.item__content-wrapper {
+  position: relative;
+  z-index: 1;
+
+  @include mobile {
+    text-align: center;
+    top: -50px;
+    transform: translateX(12.5%);
+    width: 80%;
+  }
+
+  @include from-tablet {
+    align-content: center;
+    display: inline-grid;
+    right: -50px;
+    text-align: right;
+    width: 50%;
+  }
+}
+
+.item__content {
+  background: $brand-white;
+  padding: $content-padding-mobile;
+
+  @include from-tablet {
+    padding: $content-padding;
+  }
+}
+
+.item__title {
+  font-family: $font-secondary;
+  font-size: $title-font-size;
+  font-weight: $font-weight-normal;
+  margin: $title-margin;
+
+  & a {
+    color: $brand-black;
+    text-decoration: none;
+  }
+}
+
+.item__info {
+  font-size: $info-font-size;
+}
+
+.item__link {
+  border: 1px solid $brand-black;
+  color: $brand-black;
+  padding: $link-padding;
+  text-decoration: none;
+
+  &:hover {
+    background: $brand-black;
+    color: $brand-white;
+    text-decoration: none;
+  }
+}
+
+.item__wrapper-img {
+  content-visibility: auto;
+  width: 50%;
+
+  @include mobile {
+    height: 35vh;
+    width: 100%;
+  }
+}
+
+.item__image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+}

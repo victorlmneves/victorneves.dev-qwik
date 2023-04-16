@@ -1,0 +1,11 @@
+$footer-padding: 0.5rem;
+$footer-font-size: 14px;
+
+.footer {
+  padding: $footer-padding;
+  text-align: center;
+}
+
+.footer__text {
+  font-size: $footer-font-size;
+}

@@ -1,0 +1,75 @@
+@import "/@/assets/scss/variables";
+@import "/@/assets/scss/mixins";
+
+$form-width: 58.33333%;
+$form-width-mobile: 100%;
+$form-padding-mobile: 0 15px;
+$form-title-font-size: 2rem;
+$form-text-font-size: 1.1rem;
+$form-group-margin: 0 auto 20px;
+$form-input-height: 50px;
+$form-input-font-size: 14px;
+$form-input-padding: 10px;
+$form-textarea-height: 150px;
+$form-button-height: 50px;
+$form-button-padding: 10px 20px;
+
+.contact-form {
+  width: $form-width;
+
+  @include mobile {
+    padding: $form-padding-mobile;
+    width: $form-width-mobile;
+  }
+}
+
+.contact-form__title {
+  font-size: $form-title-font-size;
+}
+
+.contact-form__text {
+  font-size: $form-text-font-size;
+}
+
+.contact-form__group {
+  margin: $form-group-margin;
+}
+
+.contact-form__group--flex {
+  display: flex;
+  justify-content: space-between;
+
+  & .contact-form__input {
+    width: 48%;
+  }
+}
+
+.contact-form__input {
+  border: 1px solid rgb(218, 218, 218);
+  color: $brand-gray;
+  display: inline-block;
+  font-size: $form-input-font-size;
+  height: $form-input-height;
+  padding: $form-input-padding;
+  vertical-align: middle;
+  width: 100%;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.contact-form__input--textarea {
+  border-color: rgb(218, 218, 218);
+  height: $form-textarea-height;
+}
+
+.contact-form__button {
+  background: $brand-black;
+  border: none;
+  color: $brand-white;
+  height: $form-button-height;
+  padding: $form-button-padding;
+  text-transform: uppercase;
+  width: 100%;
+}

@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-import "./contacts-address.scss";
+import { component$ } from '@builder.io/qwik'
+import './contacts-address.scss'
 
 export default component$(() => {
   return (
@@ -28,5 +28,5 @@ export default component$(() => {
         </li>
       </ul>
     </div>
-  );
-});
+  )
+})

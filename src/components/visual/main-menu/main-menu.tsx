@@ -1,20 +1,20 @@
-import { component$, useSignal, $ } from "@builder.io/qwik";
-import "./main-menu.scss";
+import { component$, useSignal, $ } from '@builder.io/qwik'
+import './main-menu.scss'
 
 export default component$(() => {
-  const isMenuOpen = useSignal(false as boolean);
+  const isMenuOpen = useSignal(false as boolean)
 
   const toggleMenu = $(() => {
-    isMenuOpen.value = !isMenuOpen.value;
-    const body = document.body;
-    body.classList.remove("menu-is-open");
-    const header = document.querySelector(".header");
-    header?.classList.remove("is-open");
-    const nav = document.querySelector(".main-menu");
-    nav?.classList.remove("main-menu--open");
-    const menuIsOpen = document.querySelector("#menuIsOpen");
-    menuIsOpen?.classList.remove("menu-is-open");
-  });
+    isMenuOpen.value = !isMenuOpen.value
+    const body = document.body
+    body.classList.remove('menu-is-open')
+    const header = document.querySelector('.header')
+    header?.classList.remove('is-open')
+    const nav = document.querySelector('.main-menu')
+    nav?.classList.remove('main-menu--open')
+    const menuIsOpen = document.querySelector('#menuIsOpen')
+    menuIsOpen?.classList.remove('menu-is-open')
+  })
 
   return (
     <nav class="main-menu" role="navigation">
@@ -41,5 +41,5 @@ export default component$(() => {
         </ul>
       </div>
     </nav>
-  );
-});
+  )
+})

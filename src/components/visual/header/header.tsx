@@ -1,20 +1,20 @@
-import { component$, useSignal, $ } from "@builder.io/qwik";
-import "./header.scss";
+import { component$, useSignal, $ } from '@builder.io/qwik'
+import './header.scss'
 
 export default component$(() => {
-  const isMenuOpen = useSignal(false as boolean);
+  const isMenuOpen = useSignal(false as boolean)
 
   const toggleMenu = $(() => {
-    isMenuOpen.value = !isMenuOpen.value;
-    const body = document.body;
-    body.classList.add("menu-is-open");
-    const header = document.querySelector(".header");
-    header?.classList.add("is-open");
-    const nav = document.querySelector(".main-menu");
-    nav?.classList.add("main-menu--open");
-    const menuIsOpen = document.querySelector("#menuIsOpen");
-    menuIsOpen?.classList.add("menu-is-open");
-  });
+    isMenuOpen.value = !isMenuOpen.value
+    const body = document.body
+    body.classList.add('menu-is-open')
+    const header = document.querySelector('.header')
+    header?.classList.add('is-open')
+    const nav = document.querySelector('.main-menu')
+    nav?.classList.add('main-menu--open')
+    const menuIsOpen = document.querySelector('#menuIsOpen')
+    menuIsOpen?.classList.add('menu-is-open')
+  })
 
   return (
     <header class="header">
@@ -29,5 +29,5 @@ export default component$(() => {
         </span>
       </div>
     </header>
-  );
-});
+  )
+})

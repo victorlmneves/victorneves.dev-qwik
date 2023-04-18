@@ -1,17 +1,15 @@
-import { component$, $ } from "@builder.io/qwik";
-import "./newsletter.scss";
+import { component$, $ } from '@builder.io/qwik'
+import './newsletter.scss'
 
 export default component$(() => {
   const handleSubmit = $(() => {
-    alert("You have submitted the form.");
-  });
+    alert('You have submitted the form.')
+  })
 
   return (
     <div class="newsletter">
       <h3 class="newsletter__title">Subscribe Newsletter</h3>
-      <p class="newsletter__text">
-        Subscribe our newsletter and get latest update
-      </p>
+      <p class="newsletter__text">Subscribe our newsletter and get latest update</p>
       <div class="newsletter__group">
         <form
           preventdefault:submit
@@ -25,14 +23,7 @@ export default component$(() => {
           noValidate
         >
           <label class="is-hidden">Email</label>
-          <input
-            type="email"
-            value=""
-            name="EMAIL"
-            id="mce-EMAIL"
-            class="newsletter__input"
-            placeholder="Your email"
-          />
+          <input type="email" value="" name="EMAIL" id="mce-EMAIL" class="newsletter__input" placeholder="Your email" />
           <input
             type="submit"
             value="Subscribe"
@@ -43,5 +34,5 @@ export default component$(() => {
         </form>
       </div>
     </div>
-  );
-});
+  )
+})

@@ -1,16 +1,16 @@
-import { component$ } from "@builder.io/qwik";
-import "./item.scss";
+import { component$ } from '@builder.io/qwik'
+import './item.scss'
 
 interface IWork {
-  id: string | number;
-  client: string;
-  project: string;
-  slug: string;
-  image: string;
+  id: string | number
+  client: string
+  project: string
+  slug: string
+  image: string
 }
 
 interface IProject {
-  work: IWork;
+  work: IWork
 }
 
 export default component$((props: IProject) => {
@@ -37,5 +37,5 @@ export default component$((props: IProject) => {
         ></div>
       </div>
     </div>
-  );
-});
+  )
+})

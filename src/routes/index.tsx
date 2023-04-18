@@ -1,17 +1,17 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import WorksList from "~/components/starter/work/list";
+import { component$ } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
+import WorksList from '~/components/visual/work/list'
 
 export default component$(() => {
-  return <WorksList />;
-});
+  return <WorksList />
+})
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: 'My personal website made with Qwik',
   meta: [
     {
-      name: "description",
-      content: "Qwik site description",
+      name: 'description',
+      content: 'Copy of my personal website orinally made with Vue, using Qwik',
     },
   ],
-};
+}

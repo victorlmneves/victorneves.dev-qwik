@@ -1,5 +1,6 @@
-import { component$ } from "@builder.io/qwik";
-import "./index.scss";
+import { component$ } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
+import './index.scss'
 
 export default component$(() => {
   return (
@@ -9,8 +10,8 @@ export default component$(() => {
           <div class="about__content">
             <h2 class="about__title">Hi! I'm Victor Neves</h2>
             <p class="about__info">
-              Self-taught professional, competent, motivated and dedicated,
-              experienced in Desktop Publishing and Web Development.
+              Self-taught professional, competent, motivated and dedicated, experienced in Desktop Publishing and Web
+              Development.
             </p>
           </div>
         </div>
@@ -24,5 +25,15 @@ export default component$(() => {
         </div>
       </div>
     </div>
-  );
-});
+  )
+})
+
+export const head: DocumentHead = {
+  title: 'About page',
+  meta: [
+    {
+      name: 'description',
+      content: 'Copy of my personal website orinally made with Vue, using Qwik',
+    },
+  ],
+}

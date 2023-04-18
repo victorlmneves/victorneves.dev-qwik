@@ -1,33 +1,33 @@
 // @ts-ignore: Unused import
-import { component$, Resource, useResource$ } from "@builder.io/qwik";
-import Item from "~/components/visual/work/item";
-import "./list.scss";
+import { component$, Resource, useResource$ } from '@builder.io/qwik'
+import Item from '~/components/visual/work/item'
+import './list.scss'
 
 interface IWorks {
-  id: string | number;
-  client: string;
-  project: string;
-  slug: string;
-  image: string;
+  id: string | number
+  client: string
+  project: string
+  slug: string
+  image: string
 }
 
 export const fetchWorks = () => {
-  return fetch("https://api.victorneves.dev/works/read.php");
-};
+  return fetch('https://api.victorneves.dev/works/read.php')
+}
 
 export default component$(() => {
   const works = useResource$(() => {
     const res = fetchWorks()
       .then((res) => {
-        return res.json() as Promise<IWorks[]>;
+        return res.json() as Promise<IWorks[]>
       })
       .catch((err) => {
-        console.log(err);
-        throw new Error("Error fetching works");
-      });
+        console.log(err)
+        throw new Error('Error fetching works')
+      })
 
-    return res;
-  });
+    return res
+  })
 
   return (
     <Resource
@@ -42,5 +42,5 @@ export default component$(() => {
         </section>
       )}
     />
-  );
-});
+  )
+})

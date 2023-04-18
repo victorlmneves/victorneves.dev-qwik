@@ -1,29 +1,17 @@
-import { component$, $ } from "@builder.io/qwik";
-import "./contacts-form.scss";
+import { component$, $ } from '@builder.io/qwik'
+import './contacts-form.scss'
 
 export default component$(() => {
   const handleSubmit = $(() => {
-    alert("You have submitted the form.");
-  });
+    alert('You have submitted the form.')
+  })
 
   return (
     <div class="contact-form">
       <form onSubmit$={handleSubmit}>
         <div class="contact-form__group contact-form__group--flex">
-          <input
-            required
-            name="name"
-            type="text"
-            class="contact-form__input"
-            placeholder="Name"
-          />
-          <input
-            required
-            name="email"
-            type="email"
-            class="contact-form__input"
-            placeholder="Email"
-          />
+          <input required name="name" type="text" class="contact-form__input" placeholder="Name" />
+          <input required name="email" type="email" class="contact-form__input" placeholder="Email" />
         </div>
         <div class="contact-form__group">
           <textarea
@@ -43,14 +31,10 @@ export default component$(() => {
             />
           )}
           {!submitting && ( */}
-          <input
-            type="submit"
-            value="Send Message"
-            class="contact-form__button"
-          />
+          <input type="submit" value="Send Message" class="contact-form__button" />
           {/* )} */}
         </div>
       </form>
     </div>
-  );
-});
+  )
+})

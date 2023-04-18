@@ -1,5 +1,12 @@
-import { component$, Resource, useResource$ } from '@builder.io/qwik'
+import {
+  component$,
+  Resource,
+  useResource$,
+  useSignal,
+  useTask$,
+} from '@builder.io/qwik'
 import { useLocation } from '@builder.io/qwik-city'
+import { isServer } from '@builder.io/qwik/build'
 import './index.scss'
 
 export const fetchWork = (slug: String) => {
@@ -8,6 +15,32 @@ export const fetchWork = (slug: String) => {
 
 export default component$(() => {
   const loc = useLocation()
+  const slideIndex = useSignal(1)
+  const nrOfImages = useSignal(0)
+
+  useTask$(async (taskContext) => {
+    taskContext.track(() => slideIndex.value)
+
+    if (slideIndex.value > nrOfImages.value) {
+      slideIndex.value = 1
+    }
+
+    if (slideIndex.value < 1) {
+      slideIndex.value = nrOfImages.value
+    }
+
+    if (isServer) {
+      return // Server guard
+    }
+
+    const images = document.querySelectorAll('.work__img') as NodeListOf<HTMLDivElement>
+
+    for (let i = 0; i < nrOfImages.value; i++) {
+      images[i].style.display = 'none'
+    }
+
+    images[slideIndex.value - 1].style.display = 'block'
+  })
 
   const workResource = useResource$<any>(async () => {
     const res = await fetch(`https://api.victorneves.dev/work/read.php?slug=${loc.params.slug}`)
@@ -18,6 +51,7 @@ export default component$(() => {
         const workItem = res[0]
         const allImages = workItem.images.split(',')
         workItem.allImages = allImages
+        nrOfImages.value = allImages.length
 
         return res[0]
       },
@@ -36,8 +70,19 @@ export default component$(() => {
         <div class="work">
           {work.allImages.length > 1 && (
             <ul class="work__slideshow">
-              <li class="work__nav">« prev</li>
-              <li class="work__nav">next »</li>
+              <li
+                onClick$={() => (slideIndex.value >= slideIndex.value ? slideIndex.value-- : slideIndex.value++)}
+                class="work__nav"
+              >
+                « prev
+              </li>
+              {slideIndex.value}
+              <li
+                onClick$={() => (slideIndex.value <= slideIndex.value ? slideIndex.value++ : slideIndex.value--)}
+                class="work__nav"
+              >
+                next »
+              </li>
             </ul>
           )}
           <div class="work__item">

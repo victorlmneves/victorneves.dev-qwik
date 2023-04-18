@@ -2,8 +2,7 @@ import { component$, $ } from "@builder.io/qwik";
 import "./newsletter.scss";
 
 export default component$(() => {
-  const handleSubmit = $((event) => {
-    event.preventDefault();
+  const handleSubmit = $(() => {
     alert("You have submitted the form.");
   });
 
@@ -15,6 +14,7 @@ export default component$(() => {
       </p>
       <div class="newsletter__group">
         <form
+          preventdefault:submit
           onSubmit$={handleSubmit}
           action="https://dev.us1.list-manage.com/subscribe/post?u=0bfab83c7d1ac1ce846909de6&amp;id=87b6b5acbf"
           method="post"

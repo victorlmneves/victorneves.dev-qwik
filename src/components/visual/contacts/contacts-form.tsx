@@ -2,8 +2,7 @@ import { component$, $ } from "@builder.io/qwik";
 import "./contacts-form.scss";
 
 export default component$(() => {
-  const handleSubmit = $((event) => {
-    event.preventDefault();
+  const handleSubmit = $(() => {
     alert("You have submitted the form.");
   });
 
@@ -31,8 +30,6 @@ export default component$(() => {
             required
             name="message"
             class="contact-form__input contact-form__input--textarea"
-            cols="30"
-            rows="7"
             placeholder="Message"
           ></textarea>
         </div>
@@ -46,11 +43,11 @@ export default component$(() => {
             />
           )}
           {!submitting && ( */}
-            <input
-              type="submit"
-              value="Send Message"
-              class="contact-form__button"
-            />
+          <input
+            type="submit"
+            value="Send Message"
+            class="contact-form__button"
+          />
           {/* )} */}
         </div>
       </form>

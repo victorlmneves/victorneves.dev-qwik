@@ -1,47 +1,31 @@
-import { component$, Resource, useResource$ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
-import "./index.scss";
+import { component$, Resource, useResource$ } from '@builder.io/qwik'
+import { useLocation } from '@builder.io/qwik-city'
+import './index.scss'
+
+export const fetchWork = (slug: String) => {
+  return fetch(`https://api.victorneves.dev/work/read.php?slug=${slug}`)
+}
 
 export default component$(() => {
-  const loc = useLocation();
-  let slideIndex = 1;
+  const loc = useLocation()
 
-  const showSlides = (n) => {
-    let i;
-    const images = document.querySelectorAll(".work__img");
-    const nrOfImages = images.length;
+  const workResource = useResource$<any>(async () => {
+    const res = await fetch(`https://api.victorneves.dev/work/read.php?slug=${loc.params.slug}`)
+    const data = res.json()
 
-    if (n > nrOfImages) {
-      slideIndex = 1;
-    }
+    return data.then(
+      (res) => {
+        const workItem = res[0]
+        const allImages = workItem.images.split(',')
+        workItem.allImages = allImages
 
-    if (n < 1) {
-      slideIndex = nrOfImages;
-    }
-
-    for (i = 0; i < nrOfImages; i++) {
-      images[i].style.display = "none";
-    }
-
-    images[slideIndex - 1].style.display = "block";
-  };
-
-  const navSlide = (n) => {
-    const newIndex = (slideIndex += n);
-    showSlides(newIndex);
-  };
-
-  // Use useResource$() to set up how the data is fetched from the server.
-  const workResource = useResource$<string[]>(({ cleanup }) => {
-    // A good practice is to use `AbortController` to abort the fetching of data if
-    // new request comes in. We create a new `AbortController` and register a `cleanup`
-    // function which is called when this function re-runs.
-    const controller = new AbortController();
-    cleanup(() => controller.abort());
-
-    // Fetch the data and return the promises.
-    return fetchWork(loc.params.slug, controller);
-  });
+        return res[0]
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
+  })
 
   return (
     <Resource
@@ -50,7 +34,7 @@ export default component$(() => {
       onRejected={(error) => <>Error: {error.message}</>}
       onResolved={(work) => (
         <div class="work">
-          {work.images.length > 1 && (
+          {work.allImages.length > 1 && (
             <ul class="work__slideshow">
               <li class="work__nav">« prev</li>
               <li class="work__nav">next »</li>
@@ -58,7 +42,7 @@ export default component$(() => {
           )}
           <div class="work__item">
             <div class="work__img-wrapper">
-              {work.images.map((image, i) => (
+              {work.allImages.map((image: string, i: number) => (
                 <div
                   key={i}
                   class="work__img"
@@ -78,25 +62,5 @@ export default component$(() => {
         </div>
       )}
     />
-  );
-});
-
-export async function fetchWork(
-  slug: string,
-  controller?: AbortController
-): Promise<string[]> {
-  const resp = await fetch(
-    `https://api.victorneves.dev/work/read.php?slug=${slug}`,
-    {
-      signal: controller?.signal,
-    }
-  );
-  console.log("FETCH resolved");
-  const json = await resp.json();
-
-  const workItem = json[0];
-  const allImages = workItem.images.split(",");
-  workItem.images = allImages;
-
-  return Array.isArray(json) ? workItem : Promise.reject(json);
-}
+  )
+})

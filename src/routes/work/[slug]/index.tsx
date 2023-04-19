@@ -77,7 +77,6 @@ export default component$(() => {
               >
                 « prev
               </li>
-              {slideIndex.value}
               <li
                 onClick$={() => (slideIndex.value <= slideIndex.value ? slideIndex.value++ : slideIndex.value--)}
                 class="work__nav"

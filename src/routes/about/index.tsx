@@ -1,6 +1,5 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
-import { headTags } from '~/utils/head-tags'
 import './index.scss'
 
 export default component$(() => {

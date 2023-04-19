@@ -1,10 +1,10 @@
 import { component$, Slot } from '@builder.io/qwik'
-import { useLocation } from '@builder.io/qwik-city'
-
+import { useLocation, type DocumentHead } from '@builder.io/qwik-city'
 import Header from '~/components/visual/header/header'
 import MainMenu from '~/components/visual/main-menu/main-menu'
 import Newsletter from '~/components/visual/footer/newsletter'
 import Footer from '~/components/visual/footer/footer'
+import { headTags } from '~/utils/head-tags'
 
 export default component$(() => {
   const location = useLocation()
@@ -28,3 +28,9 @@ export default component$(() => {
     </div>
   )
 })
+
+export const head: DocumentHead = () => {
+  return {
+    meta: [...headTags],
+  }
+}

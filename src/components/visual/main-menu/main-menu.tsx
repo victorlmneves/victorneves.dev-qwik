@@ -1,4 +1,5 @@
 import { component$, useSignal, $ } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
 import './main-menu.scss'
 
 export default component$(() => {
@@ -24,19 +25,19 @@ export default component$(() => {
       <div class="main-menu__wrapper">
         <ul class="main-menu__content">
           <li class="main-menu__item">
-            <a class="main-menu__link" href="/" onClick$={toggleMenu}>
+            <Link class="main-menu__link" href="/" onClick$={toggleMenu}>
               Home
-            </a>
+            </Link>
           </li>
           <li class="main-menu__item">
-            <a class="main-menu__link" href="/contacts" onClick$={toggleMenu}>
+            <Link class="main-menu__link" href="/contacts" onClick$={toggleMenu}>
               Contacts
-            </a>
+            </Link>
           </li>
           <li class="main-menu__item">
-            <a class="main-menu__link" href="/about" onClick$={toggleMenu}>
+            <Link class="main-menu__link" href="/about" onClick$={toggleMenu}>
               About
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

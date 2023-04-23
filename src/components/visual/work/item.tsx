@@ -1,4 +1,5 @@
 import { component$ } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
 import './item.scss'
 
 interface IWork {
@@ -22,9 +23,10 @@ export default component$((props: IProject) => {
             <h2 class="item__title">
               <a href={`work/${props.work.slug}`}>{props.work.client}</a>
             </h2>
-            <a class="item__link" href={`work/${props.work.slug}`}>
+            <p class="item__info">{props.work.project}</p>
+            <Link class="item__link" href={`work/${props.work.slug}`}>
               View Project
-            </a>
+            </Link>
           </div>
         </div>
       </div>

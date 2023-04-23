@@ -5,7 +5,7 @@ import { headTags } from '~/utils/head-tags'
 import './index.scss'
 
 export const useWork = routeLoader$(async (requestEvent) => {
-  const slug = requestEvent.url.pathname.substring(6).replace('/', '')
+  const slug = requestEvent.params.slug
   const res = await fetch(`https://api.victorneves.dev/work/read.php?slug=${slug}`)
   const data = res.json()
 
@@ -46,6 +46,10 @@ export default component$(() => {
 
     const images = document.querySelectorAll('.work__img') as NodeListOf<HTMLDivElement>
 
+    if (images.length === 0) {
+      return
+    }
+
     for (let i = 0; i < nrOfImages.value; i++) {
       images[i].style.display = 'none'
     }
@@ -55,7 +59,7 @@ export default component$(() => {
 
   const workResource = useResource$<any>(async () => {
     const workItem = work
-    const allImages = workItem.images.split(',')
+    const allImages = workItem?.images?.split(',')
     workItem.allImages = allImages
     nrOfImages.value = allImages.length
 

@@ -1,4 +1,5 @@
 import { component$, useSignal, $ } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
 import './header.scss'
 
 export default component$(() => {
@@ -20,9 +21,9 @@ export default component$(() => {
     <header class="header">
       <div class="header__content">
         <div class="header__logo">
-          <a class="header__logo-link" href="/">
+          <Link href="/" class="header__logo-link">
             Victor Neves
-          </a>
+          </Link>
         </div>
         <span class="header__toggle-menu" onClick$={toggleMenu}>
           <i class="icon-menu"></i>

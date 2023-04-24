@@ -23,19 +23,19 @@ export default component$(() => {
         <i class="icon-close"></i>
       </span>
       <div class="main-menu__wrapper">
-        <ul class="main-menu__content">
+        <ul class="main-menu__content" onClick$={toggleMenu}>
           <li class="main-menu__item">
-            <Link class="main-menu__link" href="/" onClick$={toggleMenu}>
+            <Link class="main-menu__link" href="/">
               Home
             </Link>
           </li>
           <li class="main-menu__item">
-            <Link class="main-menu__link" href="/contacts" onClick$={toggleMenu}>
+            <Link class="main-menu__link" href="/contacts">
               Contacts
             </Link>
           </li>
           <li class="main-menu__item">
-            <Link class="main-menu__link" href="/about" onClick$={toggleMenu}>
+            <Link class="main-menu__link" href="/about">
               About
             </Link>
           </li>

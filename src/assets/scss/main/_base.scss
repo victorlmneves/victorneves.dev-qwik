@@ -69,6 +69,7 @@ a {
 .container {
   background-color: $brand-white;
   margin: 0 auto;
+  min-height: 100%;
   padding: $container-padding;
 
   //   @include tablet {

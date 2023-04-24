@@ -21,7 +21,7 @@ export default component$((props: IProject) => {
         <div class="item__content">
           <div class="item__content">
             <h2 class="item__title">
-              <a href={`work/${props.work.slug}`}>{props.work.client}</a>
+              <Link href={`work/${props.work.slug}`}>{props.work.client}</Link>
             </h2>
             <p class="item__info">{props.work.project}</p>
             <Link class="item__link" href={`work/${props.work.slug}`}>

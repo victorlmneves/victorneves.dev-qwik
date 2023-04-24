@@ -31,7 +31,7 @@
     "@typescript-eslint/parser": "5.57.1",
     "eslint": "8.37.0",
     "eslint-plugin-qwik": "0.102.0",
-    "netlify-cli": "^12.0.11",
+    "netlify-cli": "^14.0.0",
     "prettier": "2.8.8",
     "typescript": "5.0.4",
     "undici": "5.21.0",

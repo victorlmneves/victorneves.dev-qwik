@@ -1,10 +1,14 @@
-import { component$ } from '@builder.io/qwik'
+import { type Signal, component$, createContextId, useContextProvider, useSignal } from '@builder.io/qwik'
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city'
 import { RouterHead } from './components/router-head/router-head'
-
 import '/@/assets/scss/app.scss'
 
+export const IsMenuOpenContext = createContextId<Signal<string>>('menu-context')
+
 export default component$(() => {
+  const isMenuOpen = useSignal('false')
+  useContextProvider(IsMenuOpenContext, isMenuOpen)
+
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
    * immediately followed by the document's <head> and <body>.

@@ -1,21 +1,28 @@
-import { component$, useSignal, $ } from '@builder.io/qwik'
+import { component$, useContext, useSignal, $ } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
+import { IsMenuOpenContext } from '~/root'
+import { userContext } from '~/routes/layout'
+import { useAuthSignin, useAuthSignout } from '~/routes/plugin@auth'
+import { openCloseMenu } from '~/utils/open-close-menu'
 import './main-menu.scss'
 
 export default component$(() => {
-  const isMenuOpen = useSignal(false as boolean)
+  const signIn = useAuthSignin()
+  const signOut = useAuthSignout();
+  const isMenuOpen = useContext(IsMenuOpenContext)
+  const userState = useContext(userContext)
+  const isLoggedIn = useSignal(userState.value === 'true' ? true : false)
 
   const toggleMenu = $(() => {
-    isMenuOpen.value = !isMenuOpen.value
-    const body = document.body
-    body.classList.remove('menu-is-open')
-    const header = document.querySelector('.header')
-    header?.classList.remove('is-open')
-    const nav = document.querySelector('.main-menu')
-    nav?.classList.remove('main-menu--open')
-    const menuIsOpen = document.querySelector('#menuIsOpen')
-    menuIsOpen?.classList.remove('menu-is-open')
+    isMenuOpen.value = isMenuOpen.value === 'true' ? 'false' : 'true'
+    openCloseMenu()
   })
+
+  const logInAction = $(() => {
+    signIn.submit({ providerId: 'auth0' })
+  })
+
+  const logoutAction = $(() => signOut.submit({}))
 
   return (
     <nav class="main-menu" role="navigation">
@@ -38,6 +45,13 @@ export default component$(() => {
             <Link class="main-menu__link" href="/about">
               About
             </Link>
+          </li>
+          <li class="main-menu__item">
+          {isLoggedIn.value ? (
+            <a class="main-menu__link" onClick$={logoutAction}>Logout</a>
+          ) : (
+            <a class="main-menu__link" onClick$={logInAction}>Login</a>
+          )}
           </li>
         </ul>
       </div>

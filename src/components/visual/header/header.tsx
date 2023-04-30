@@ -1,20 +1,15 @@
-import { component$, useSignal, $ } from '@builder.io/qwik'
+import { component$, useContext, $ } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
+import { IsMenuOpenContext } from '~/root'
+import { openCloseMenu } from '~/utils/open-close-menu'
 import './header.scss'
 
 export default component$(() => {
-  const isMenuOpen = useSignal(false as boolean)
+  const isMenuOpen = useContext(IsMenuOpenContext)
 
   const toggleMenu = $(() => {
-    isMenuOpen.value = !isMenuOpen.value
-    const body = document.body
-    body.classList.add('menu-is-open')
-    const header = document.querySelector('.header')
-    header?.classList.add('is-open')
-    const nav = document.querySelector('.main-menu')
-    nav?.classList.add('main-menu--open')
-    const menuIsOpen = document.querySelector('#menuIsOpen')
-    menuIsOpen?.classList.add('menu-is-open')
+    isMenuOpen.value = isMenuOpen.value === 'true' ? 'false' : 'true'
+    openCloseMenu()
   })
 
   return (

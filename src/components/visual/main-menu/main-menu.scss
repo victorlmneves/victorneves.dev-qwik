@@ -58,5 +58,9 @@ $menu-link-padding: 10px 0;
     padding: $menu-link-padding;
     text-transform: uppercase;
     text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

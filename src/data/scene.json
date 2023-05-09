@@ -1,0 +1,36 @@
+{
+  "name": "TENANT: New Dashboard",
+  "appearance": "Scene",
+  "data": {
+    "id": "unique-page-id-123",
+    "layout": "MasterLayout",
+    "title": "TENANT: Dasboard",
+    "description": "Das tolle neue Endkundenportal von TENANT.",
+    "keywords": "Strom, Gas, Wasser, Energie, Energieanbieter, Versorger",
+    "components": [
+      {
+        "name": "counter",
+        "appearance": "counter",
+        "data": {
+          "id": "unique-stage-1",
+          "headlineText": "Leider ist etwas schief gelaufen!",
+          "paragraphText": "Error code: 404 - Page not found",
+          "isHero": true
+        }
+      },
+      {
+        "name": "work",
+        "appearance": "work",
+        "data": {
+          "id": "1",
+          "type": null,
+          "client": "Ficaat",
+          "project": "Layout and Responsive HTML catalogue made to run on tablets (2013)",
+          "description": "Layout and Responsive HTML catalogue made to run on tablets (2013)",
+          "slug": "ficaat-tablet",
+          "image": "ficaat_app.jpg"
+        }
+      }
+    ]
+  }
+}

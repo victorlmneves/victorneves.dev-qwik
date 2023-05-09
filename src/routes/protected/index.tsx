@@ -7,7 +7,7 @@ export const useUserLoader = routeLoader$(async (event) => {
   const session = await getAuthSession(event)
 
   if (!session) {
-    throw event.redirect(302, '/api/auth/signin')
+    throw event.redirect(302, '/login')
   }
 
   return session.user

@@ -8,7 +8,7 @@ import './main-menu.scss'
 
 export default component$(() => {
   const signIn = useAuthSignin()
-  const signOut = useAuthSignout();
+  const signOut = useAuthSignout()
   const isMenuOpen = useContext(IsMenuOpenContext)
   const userState = useContext(userContext)
   const isLoggedIn = useSignal(userState.value === 'true' ? true : false)
@@ -47,11 +47,15 @@ export default component$(() => {
             </Link>
           </li>
           <li class="main-menu__item">
-          {isLoggedIn.value ? (
-            <a class="main-menu__link" onClick$={logoutAction}>Logout</a>
-          ) : (
-            <a class="main-menu__link" onClick$={logInAction}>Login</a>
-          )}
+            {isLoggedIn.value ? (
+              <a class="main-menu__link" onClick$={logoutAction}>
+                Logout
+              </a>
+            ) : (
+              <a class="main-menu__link" onClick$={logInAction}>
+                Login
+              </a>
+            )}
           </li>
         </ul>
       </div>

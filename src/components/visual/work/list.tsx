@@ -36,8 +36,8 @@ export default component$(() => {
       onRejected={(error) => <>Error: {error.message}</>}
       onResolved={(works) => (
         <section class="list">
-          {works.map((work, index) => (
-            <Item key={index} work={work} />
+          {works.map((work) => (
+            <Item key={work.id} work={work} />
           ))}
         </section>
       )}

@@ -1,0 +1,94 @@
+@import '/@/assets/scss/variables';
+@import '/@/assets/scss/mixins';
+
+$login-padding: 6.6em 0 0;
+$login-padding-mobile: 6em 0 0;
+$login-item-min-height: 100vh;
+$login-item-bottom-margin: 120px;
+$login-item-last-child-bottom-margin: 60px;
+$login-content-padding: 60px 30px;
+$login-content-padding-mobile: 20px;
+
+.login {
+  clear: both;
+  padding: $login-padding;
+  position: relative;
+
+  @include mobile {
+    padding: $login-padding-mobile;
+  }
+}
+
+.login__item {
+  display: flex;
+  margin-bottom: $login-item-bottom-margin;
+
+  @include mobile {
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
+
+  @include from-tablet {
+    min-height: $login-item-min-height;
+  }
+
+  &:last-child {
+    margin-bottom: $login-item-last-child-bottom-margin;
+  }
+}
+
+.login__content-wrapper {
+  position: relative;
+  z-index: 1;
+
+  @include mobile {
+    text-align: center;
+    top: -50px;
+    transform: translateX(12.5%);
+    width: 80%;
+  }
+
+  @include from-tablet {
+    align-content: center;
+    display: inline-grid;
+    right: -50px;
+    text-align: right;
+    width: 50%;
+  }
+}
+
+.login__content {
+  background: $brand-white;
+  padding: $login-content-padding-mobile;
+
+  @include from-tablet {
+    padding: $login-content-padding;
+  }
+}
+
+.login__title {
+  font-size: 2.6rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.login__info {
+  font-size: 1.3rem;
+}
+
+.login__wrapper-img {
+  width: 50%;
+
+  @include mobile {
+    height: 35vh;
+    width: 100%;
+  }
+}
+
+.login__image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+}

@@ -39,6 +39,11 @@ export default component$(() => {
               About
             </Link>
           </li>
+          <li class="main-menu__item">
+            <Link class="main-menu__link" href="/dynamic/ficaat-tablet">
+              Dynamic Scene
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

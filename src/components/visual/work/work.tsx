@@ -15,8 +15,6 @@ interface IProject {
 }
 
 export default component$((props: IProject) => {
-  console.log(props)
-
   const workResource = useResource$<any>(async () => {
     return props
   })

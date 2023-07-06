@@ -48,6 +48,7 @@ export default component$(() => {
             <a class="main-menu__link" target="_blank" href="http://localhost:3000/playground?type=success&message=This%20is%20a%20success%20message">
               Playground
             </a>
+          </li>
         </ul>
       </div>
     </nav>

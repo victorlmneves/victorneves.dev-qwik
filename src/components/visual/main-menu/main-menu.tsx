@@ -39,6 +39,15 @@ export default component$(() => {
               About
             </Link>
           </li>
+          <li class="main-menu__item">
+            <Link class="main-menu__link" href="/about">
+              About
+            </Link>
+          </li>
+          <li class="main-menu__item">
+            <a class="main-menu__link" target="_blank" href="http://localhost:3000/playground?type=success&message=This%20is%20a%20success%20message">
+              Playground
+            </a>
         </ul>
       </div>
     </nav>

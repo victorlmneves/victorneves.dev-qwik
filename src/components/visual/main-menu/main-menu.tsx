@@ -49,6 +49,11 @@ export default component$(() => {
               Playground
             </a>
           </li>
+          <li class="main-menu__item">
+            <a class="main-menu__link" target="_blank" href="https://mein-yello.de/login/?type=success&message=welcome">
+              Playground w/ params
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

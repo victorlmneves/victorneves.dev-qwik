@@ -54,6 +54,11 @@ export default component$(() => {
               Playground w/ params
             </a>
           </li>
+          <li class="main-menu__item">
+            <a class="main-menu__link" target="_blank" href="hhttps://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/?type=success&message=welcome">
+              Playground logged in
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

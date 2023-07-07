@@ -45,7 +45,7 @@ export default component$(() => {
             </Link>
           </li>
           <li class="main-menu__item">
-            <a class="main-menu__link" target="_blank" href="http://www.w3schools.com/jsref/prop_doc_referrer.asp">
+            <a class="main-menu__link" target="_blank" href="https://mein-yello.de/login">
               Playground
             </a>
           </li>

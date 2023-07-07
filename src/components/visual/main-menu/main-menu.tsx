@@ -45,17 +45,17 @@ export default component$(() => {
             </Link>
           </li>
           <li class="main-menu__item">
-            <a class="main-menu__link" target="_blank" href="hhttps://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/login">
+            <a class="main-menu__link" target="_blank" href="https://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/login">
               Playground
             </a>
           </li>
           <li class="main-menu__item">
-            <a class="main-menu__link" target="_blank" href="hhttps://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/login/?type=success&message=welcome">
+            <a class="main-menu__link" target="_blank" href="https://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/login/?type=success&message=welcome">
               Playground w/ params
             </a>
           </li>
           <li class="main-menu__item">
-            <a class="main-menu__link" target="_blank" href="hhttps://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/?type=success&message=welcome">
+            <a class="main-menu__link" target="_blank" href="https://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/?type=success&message=welcome">
               Playground logged in
             </a>
           </li>

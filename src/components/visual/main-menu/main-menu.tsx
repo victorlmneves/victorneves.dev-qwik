@@ -50,12 +50,12 @@ export default component$(() => {
             </a>
           </li>
           <li class="main-menu__item">
-            <a class="main-menu__link" target="_blank" href="https://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/login/?type=success&message=welcome">
+            <a class="main-menu__link" target="_blank" href="https://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/login/?type=d2FybmluZw==&message=V2VsY29tZSB0byBjYXRjaCBub3RpZmljYXRpb25zIQ==">
               Playground w/ params
             </a>
           </li>
           <li class="main-menu__item">
-            <a class="main-menu__link" target="_blank" href="https://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/?type=success&message=welcome">
+            <a class="main-menu__link" target="_blank" href="https://app-ekpfrontend-yello-test-fs-782442-catch-notifications.azurewebsites.net/?type=c3VjY2Vzcw==&message=V2VsY29tZSB0byBjYXRjaCBub3RpZmljYXRpb25zIQ==">
               Playground logged in
             </a>
           </li>

@@ -92,10 +92,10 @@
     vfile "5.3.7"
     zod "^3.21.4"
 
-"@builder.io/qwik@0.102.0":
-  version "0.102.0"
-  resolved "https://registry.yarnpkg.com/@builder.io/qwik/-/qwik-0.102.0.tgz#ae3978b9fa4c935a1ab0440451ddc087383f411d"
-  integrity sha512-27Q6ObitiyXtT/M0YyJdrmhCHk2VKBqFAnjuxbf1N3XivD4k8+0uMuwyPvlc3ee2s6OjfbAfzmM1YMNIf3BAjQ==
+"@builder.io/qwik@0.107.0":
+  version "0.107.0"
+  resolved "https://registry.yarnpkg.com/@builder.io/qwik/-/qwik-0.107.0.tgz#6841a600240ae4f7c54fff632eec6af43c01b1e0"
+  integrity sha512-YcLvM4sW69rKbK+tcOm60+rvbH7j/b3x2m3+dhGQOgyGMWw8WqoCAmr5clF5xONM0pCaOkrh6I3SncRedXFBYw==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
